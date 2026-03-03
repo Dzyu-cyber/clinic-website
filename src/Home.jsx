@@ -24,8 +24,14 @@ export default function Home({ setPage }) {
                         <Button onClick={() => setPage('Contact')}>Book an Appointment</Button>
                     </div>
                     <div className="flex-1 w-full">
-                        <div className="w-full h-64 md:h-96 bg-gray-300 rounded-lg shadow-md flex items-center justify-center text-gray-500">
-                            [Hero Image Placeholder - 800x600]
+                        <div className="relative w-full h-64 md:h-[500px] overflow-hidden rounded-2xl shadow-2xl">
+                            <img
+                                src="/hero-doctor.jpg"
+                                alt="CityCare Professional Medical Staff"
+                                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                            />
+                            {/* Subtle Overlay for Premium Feel */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,7 @@ export const Button = ({ children, onClick, type = "button", className = "" }) =
   </button>
 );
 
-const Layout = ({ children, setPage }) => {
+const Layout = ({ children, setPage, currentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = ['Home', 'About', 'Services', 'Contact'];
 
@@ -32,14 +32,22 @@ const Layout = ({ children, setPage }) => {
             </div>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex space-x-4">
+            <nav className="hidden md:flex space-x-2">
               {navLinks.map(link => (
                 <button
                   key={link}
                   onClick={() => setPage(link)}
-                  className="px-3 py-2 rounded-lg font-heading font-medium text-gray-600 hover:text-medical hover:bg-medical/10 transition-all duration-300 hover:scale-105"
+                  className={`px-4 py-2 rounded-lg font-heading font-semibold transition-all duration-300 relative group ${currentPage === link
+                      ? 'text-medical'
+                      : 'text-gray-600 hover:text-medical hover:bg-medical/5'
+                    }`}
                 >
                   {link}
+                  {/* Active Indicator Line */}
+                  <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-1 rounded-full transition-all duration-300 ${currentPage === link
+                      ? 'w-8 bg-medical shadow-[0_0_10px_rgba(37,99,235,0.4)] opacity-100'
+                      : 'w-0 bg-medical opacity-0 group-hover:w-4 group-hover:opacity-50'
+                    }`} />
                 </button>
               ))}
             </nav>
@@ -60,7 +68,8 @@ const Layout = ({ children, setPage }) => {
               <button
                 key={link}
                 onClick={() => { setPage(link); setIsOpen(false); }}
-                className="block w-full text-left px-4 py-3 font-heading text-gray-600 hover:bg-lightGray hover:text-medical"
+                className={`block w-full text-left px-4 py-3 font-heading font-medium transition-colors ${currentPage === link ? 'bg-medical/10 text-medical' : 'text-gray-600 hover:bg-lightGray hover:text-medical'
+                  }`}
               >
                 {link}
               </button>
@@ -120,5 +129,5 @@ export default function App() {
     }
   };
 
-  return <Layout setPage={setCurrentPage}>{renderPage()}</Layout>;
+  return <Layout setPage={setCurrentPage} currentPage={currentPage}>{renderPage()}</Layout>;
 }
