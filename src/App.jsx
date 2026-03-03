@@ -34,12 +34,12 @@ const Layout = ({ children, setPage }) => {
             </div>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex space-x-4">
               {navLinks.map(link => (
                 <button
                   key={link}
                   onClick={() => setPage(link)}
-                  className="font-heading font-medium text-gray-600 hover:text-medical transition-colors"
+                  className="px-3 py-2 rounded-lg font-heading font-medium text-gray-600 hover:text-medical hover:bg-medical/10 transition-all duration-300 hover:scale-105"
                 >
                   {link}
                 </button>
