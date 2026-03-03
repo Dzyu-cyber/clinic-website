@@ -3,13 +3,13 @@ import React from 'react';
 export default function About() {
     return (
         <div className="max-w-4xl mx-auto px-4 py-16 md:py-24">
-            <h1 className="font-heading text-4xl font-bold text-gray-900 mb-8 text-center">About CareClinic</h1>
+            <h1 className="font-heading text-4xl font-bold text-gray-900 mb-8 text-center">About CityCare</h1>
 
             <div className="space-y-12">
                 <section>
                     <h2 className="font-heading text-2xl font-semibold text-medical mb-4">Our Story</h2>
                     <p className="text-gray-600 leading-relaxed">
-                        Founded in 2012, CareClinic started with a simple vision: to make high-quality healthcare accessible to every family. Over the past decade, we have grown from a small neighborhood practice into a comprehensive medical center, serving thousands of patients with dedication and compassion.
+                        Founded in 2012, CityCare started with a simple vision: to make high-quality healthcare accessible to every family. Over the past decade, we have grown from a small neighborhood practice into a comprehensive medical center, serving thousands of patients with dedication and compassion.
                     </p>
                 </section>
 

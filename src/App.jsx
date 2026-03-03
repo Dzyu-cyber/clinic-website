@@ -27,9 +27,7 @@ const Layout = ({ children, setPage }) => {
           <div className="flex justify-between h-20 items-center">
             <div className="flex-shrink-0 cursor-pointer" onClick={() => setPage('Home')}>
               <h1 className="font-heading font-bold text-2xl text-medical flex items-center gap-2">
-                {/* Native SVG Medical Cross */}
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v4h4a1 1 0 110 2h-4v4a1 1 0 11-2 0v-4H5a1 1 0 110-2h4V3a1 1 0 011-1z" /></svg>
-                CareClinic
+                <img src="/logo.png" alt="CityCare Logo" className="h-12 w-auto" />
               </h1>
             </div>
 
@@ -80,7 +78,7 @@ const Layout = ({ children, setPage }) => {
       <footer className="bg-gray-900 text-gray-300 py-12 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h2 className="font-heading font-bold text-xl text-white mb-4">CareClinic</h2>
+            <h2 className="font-heading font-bold text-xl text-white mb-4">CityCare</h2>
             <p className="text-sm">Trusted Family Healthcare providing modern, affordable, and compassionate medical care for over a decade.</p>
           </div>
           <div>
@@ -97,13 +95,13 @@ const Layout = ({ children, setPage }) => {
             <h3 className="font-heading font-semibold text-white mb-4">Contact</h3>
             <p className="text-sm space-y-2">
               <span className="block">📞 (555) 123-4567</span>
-              <span className="block">✉️ care@clinic.com</span>
+              <span className="block">✉️ contact@citycare.com</span>
               <span className="block">📍 123 Health Ave, Medical District</span>
             </p>
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-sm text-center">
-          &copy; {new Date().getFullYear()} CareClinic. All rights reserved.
+          &copy; {new Date().getFullYear()} CityCare. All rights reserved.
         </div>
       </footer>
     </div>

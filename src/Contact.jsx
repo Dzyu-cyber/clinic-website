@@ -19,7 +19,7 @@ export default function Contact() {
                                 <span className="text-xl">📞</span> (555) 123-4567
                             </p>
                             <p className="flex items-center gap-3">
-                                <span className="text-xl">✉️</span> appointments@careclinic.com
+                                <span className="text-xl">✉️</span> appointments@citycare.com
                             </p>
                         </div>
                     </div>
