@@ -1,0 +1,75 @@
+﻿
+> clinic-website@0.0.0 build
+> vite build
+
+node.exe : [31mfailed 
+to load config from C:\
+Users\ddani\OneDrive\De
+sktop\clinic-website\vi
+te.config.js[39m
+At line:1 char:1
++ & "C:\Program Files 
+(x86)\nodejs/node.exe" 
+"C:\Users\ddani\AppData
+\Ro ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: ([31mfailed t   
+ o ....config.js[3    
+9m:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+[31merror during 
+build:
+Error: Cannot find 
+module '../lightningcss
+.win32-ia32-msvc.node'
+Require stack:
+- C:\Users\ddani\OneDri
+ve\Desktop\clinic-websi
+te\node_modules\lightni
+ngcss\node\index.js
+    at Function._resolv
+eFilename (node:interna
+l/modules/cjs/loader:13
+65:15)
+    at 
+defaultResolveImpl (nod
+e:internal/modules/cjs/
+loader:1021:19)
+    at 
+resolveForCJSWithHooks 
+(node:internal/modules/
+cjs/loader:1026:22)
+    at Function._load (
+node:internal/modules/c
+js/loader:1175:37)
+    at TracingChannel.t
+raceSync (node:diagnost
+ics_channel:322:14)
+    at wrapModuleLoad (
+node:internal/modules/c
+js/loader:235:24)
+    at Module.require (
+node:internal/modules/c
+js/loader:1445:12)
+    at require (node:in
+ternal/modules/helpers:
+135:16)
+    at 
+Object.<anonymous> (C:\
+Users\ddani\OneDrive\De
+sktop\clinic-website\no
+de_modules\lightningcss
+\node\index.js:22:22)
+    at Module._compile 
+(node:internal/modules/
+cjs/loader:1688:14)[39
+m
