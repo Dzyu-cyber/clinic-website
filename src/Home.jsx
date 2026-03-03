@@ -12,14 +12,17 @@ export default function Home({ setPage }) {
     return (
         <>
             {/* Hero Section */}
-            <section className="bg-lightGray py-16 md:py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <section className="relative overflow-hidden bg-white py-16 md:py-24">
+                {/* Decorative Gradient Background */}
+                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-medical/10 via-medical/5 to-transparent pointer-events-none" />
+
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
                     <div className="flex-1 space-y-6">
                         <h1 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                            Trusted Family Healthcare
+                            Welcome to CityCare Medical Center.
                         </h1>
                         <p className="text-lg text-gray-600 max-w-lg">
-                            Expert doctors, modern facilities, and compassionate care. Your health is our top priority. Book your consultation today.
+                            Where your health is our top priority and where Expertise is met with Compassionate Care
                         </p>
                         <Button onClick={() => setPage('Contact')}>Book an Appointment</Button>
                     </div>
