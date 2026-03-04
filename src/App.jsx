@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Home from './Home';
 import About from './About';
 import Services from './Services';
@@ -14,6 +14,43 @@ export const Button = ({ children, onClick, type = "button", className = "" }) =
     {children}
   </button>
 );
+
+// Scroll-triggered Fade In Wrapper
+export const FadeInSection = ({ children, delay = 0, className = "" }) => {
+  const [isVisible, setVisible] = useState(false);
+  const domRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    const currentRef = domRef.current;
+    if (currentRef) observer.observe(currentRef);
+
+    return () => {
+      if (currentRef) observer.unobserve(currentRef);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={domRef}
+      className={`transition-all duration-1000 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const Layout = ({ children, setPage, currentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +77,7 @@ const Layout = ({ children, setPage, currentPage }) => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
-                  <span className="text-sm font-semibold">+91 9951765865</span>
+                  <span className="text-sm font-semibold">(555) 123-4567</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-600 hover:text-medical transition-colors cursor-pointer">
                   <div className="p-2 bg-medical/5 rounded-full">
@@ -48,7 +85,7 @@ const Layout = ({ children, setPage, currentPage }) => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <span className="text-sm font-semibold">lscvja@gmail.com</span>
+                  <span className="text-sm font-semibold">citycare@gmail.com</span>
                 </div>
               </div>
             </div>
@@ -126,7 +163,7 @@ const Layout = ({ children, setPage, currentPage }) => {
             <h3 className="font-heading font-semibold text-white mb-4">Contact</h3>
             <p className="text-sm space-y-2">
               <span className="block">📞 (555) 123-4567</span>
-              <span className="block">✉️ contact@citycare.com</span>
+              <span className="block">✉️ citycare@gmail.com</span>
               <span className="block">📍 123 Health Ave, Medical District</span>
             </p>
           </div>
