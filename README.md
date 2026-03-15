@@ -4,7 +4,7 @@ This website is a polished, ready-to-use web presence for a clinic or small heal
 
 Visit it live: https://clinic-website-nine-lemon.vercel.app/
 
-![Homepage screenshot](assets/screenshot.png)
+![Homepage screenshot](src/assets/screenshot.png)
 
 ---
 
