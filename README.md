@@ -1,6 +1,10 @@
-# Clinic Website (Demo)
+# Clinic Website 🩺🏥
 
 This website is a polished, ready-to-use web presence for a clinic or small healthcare practice. It includes clean branding sections, patient-focused content, and an easy path to customize text and imagery for your business.
+
+Visit it live: https://clinic-website-nine-lemon.vercel.app/
+
+![Homepage screenshot](assets/screenshot.png)
 
 ---
 
