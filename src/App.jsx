@@ -181,7 +181,7 @@ const Layout = ({ children, setPage, currentPage }) => {
         className="fixed bottom-6 right-6 md:top-[18vh] md:bottom-auto z-[1000] flex items-center gap-3 group"
         aria-label="Chat with us on WhatsApp"
       >
-        <div className="hidden md:block bg-white text-gray-800 text-sm font-bold py-2 px-4 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.15)] relative border border-gray-100 transition-all duration-300 transform group-hover:-translate-y-1">
+        <div className="bg-white text-gray-800 text-sm font-bold py-2 px-4 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.15)] relative border border-gray-100 transition-all duration-300 transform group-hover:-translate-y-1">
           WhatsApp Us! 😊
           {/* Small chat tail pointing right toward the icon */}
           <div className="absolute top-1/2 -translate-y-1/2 -right-2 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[8px] border-l-white"></div>
