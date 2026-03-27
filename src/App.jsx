@@ -175,10 +175,10 @@ const Layout = ({ children, setPage, currentPage }) => {
 
       {/* WhatsApp Floating Widget */}
       <a
-        href={"https://wa.me/9553722793?text=" + encodeURIComponent("Hello Im Danish 😊")}
+        href="https://api.whatsapp.com/send?phone=9553722793&text=Hello%20Im%20Danish%20%F0%9F%98%8A"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-1/4 right-6 z-[1000] flex items-center gap-3 group"
+        className="fixed top-[18vh] right-6 z-[1000] flex items-center gap-3 group"
         aria-label="Chat with us on WhatsApp"
       >
         <div className="bg-white text-gray-800 text-sm font-bold py-2 px-4 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.15)] relative border border-gray-100 transition-all duration-300 transform group-hover:-translate-y-1">
