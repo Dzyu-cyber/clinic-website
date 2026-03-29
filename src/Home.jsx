@@ -16,6 +16,7 @@ export default function Home({ setPage }) {
     return (
         <>
             {/* Hero Section */}
+            {/* Hero Section */}
             <FadeInSection>
                 <section className="relative overflow-hidden bg-white py-16 md:py-24">
                     {/* Decorative Gradient Background (Blue) */}
@@ -23,24 +24,65 @@ export default function Home({ setPage }) {
                     <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-600/20 rounded-[50%] blur-[120px] pointer-events-none transform -translate-x-1/4 translate-y-1/4" />
 
                     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
-                        <div className="flex-1 space-y-6">
-                            <h1 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                                Welcome to CityCare Medical Center
+                        {/* Left Content */}
+                        <div className="flex-[0.9] space-y-6 z-10 pt-4">
+                            {/* Pill Badge */}
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#f0f5ff] border border-blue-100 pointer-events-none">
+                                <svg className="w-4 h-4 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span className="text-xs font-bold text-[#2563EB] tracking-wider uppercase pt-[1px]">Licensed & Verified Doctors</span>
+                            </div>
+
+                            {/* Main Heading */}
+                            <h1 className="font-heading text-5xl md:text-[4.5rem] md:leading-[1.1] font-black text-[#111827] tracking-tight">
+                                Professional <br/>
+                                <span className="text-[#2563EB]">Medical Services</span> <br/>
+                                You Can <br/>
+                                Trust
                             </h1>
-                            <p className="text-lg text-gray-600 max-w-lg">
-                                Where your health is our top priority and where Expertise is met with Compassionate Care
+
+                            {/* Subtext */}
+                            <p className="text-lg text-gray-600 max-w-[420px] font-medium leading-relaxed mt-2 border-l-2 border-transparent">
+                                Expert medical solutions for families and individuals. Certified doctors providing safe, reliable, and affordable healthcare services 24/7.
                             </p>
-                            <Button onClick={() => setPage('Contact')}>Book an Appointment</Button>
+
+                            {/* Action Buttons */}
+                            <div className="flex flex-wrap items-center gap-4 pt-4">
+                                <Button onClick={() => setPage('Contact')} className="!py-[14px] !px-8 text-base font-bold rounded-xl shadow-[0_8px_16px_rgba(37,99,235,0.25)] hover:-translate-y-1 transition-transform">
+                                    Call Now
+                                </Button>
+                                <button 
+                                    onClick={() => setPage('Contact')} 
+                                    className="bg-white text-gray-900 border-[1.5px] border-gray-200 hover:border-gray-300 font-heading font-bold py-[14px] px-8 rounded-xl transition-all duration-200 text-base shadow-sm hover:-translate-y-1"
+                                >
+                                    Book Appointment
+                                </button>
+                            </div>
                         </div>
-                        <div className="flex-1 w-full">
-                            <div className="relative w-full h-64 md:h-[500px] overflow-hidden rounded-2xl shadow-2xl">
+
+                        {/* Right Image Container */}
+                        <div className="flex-[1.1] w-full relative mt-12 md:mt-0">
+                            <div className="relative w-full h-[400px] md:h-[550px] rounded-bl-[4rem] rounded-tr-[4rem] rounded-tl-xl rounded-br-xl overflow-hidden ml-auto">
                                 <img
                                     src="/Hero_indiandoctor.jpg"
                                     alt="CityCare Professional Medical Staff"
                                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                                 />
-                                {/* Subtle Overlay for Premium Feel */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                                <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-black/5 pointer-events-none" />
+                            </div>
+
+                            {/* Floating Emergency Card */}
+                            <div className="absolute -bottom-8 -left-4 md:-bottom-10 md:left-[-3rem] bg-[#f97316] text-white p-5 md:p-7 border-[6px] border-white rounded-[1.25rem] shadow-xl flex items-center gap-4 z-20 transition-transform duration-300 hover:-translate-y-1">
+                                <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                    </svg>
+                                </div>
+                                <div className="pr-2">
+                                    <p className="text-[11px] font-bold tracking-widest text-[#ffedd5] uppercase mb-1">Emergency Service</p>
+                                    <p className="text-[22px] font-black leading-none">Available 24/7</p>
+                                </div>
                             </div>
                         </div>
                     </div>
