@@ -73,7 +73,7 @@ export default function Home({ setPage }) {
                             </div>
 
                             {/* Floating Doctor Qualification Card */}
-                            <div className="absolute -bottom-8 -left-4 md:-bottom-10 md:left-[-4rem] bg-gradient-to-br from-[#10b981] to-[#047857] text-white p-5 md:p-7 border-[6px] border-white rounded-[1.5rem] shadow-2xl flex items-center gap-5 z-20 transition-transform duration-300 hover:-translate-y-2">
+                            <div className="absolute -bottom-8 -right-2 md:-bottom-10 md:-right-8 bg-gradient-to-br from-[#10b981] to-[#047857] text-white p-5 md:p-7 border-[6px] border-white rounded-[1.5rem] shadow-2xl flex items-center gap-5 z-20 transition-transform duration-300 hover:-translate-y-2">
                                 <div className="w-14 h-14 bg-white/20 backdrop-blur-sm border-2 border-white/50 rounded-full flex items-center justify-center flex-shrink-0 shadow-inner">
                                     <svg className="w-7 h-7 text-white drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
