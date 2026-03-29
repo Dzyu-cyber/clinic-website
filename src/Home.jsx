@@ -18,7 +18,7 @@ export default function Home({ setPage }) {
             {/* Hero Section */}
             {/* Hero Section */}
             <FadeInSection>
-                <section className="relative overflow-hidden bg-white py-16 md:py-24">
+                <section className="relative overflow-hidden bg-white pt-6 pb-16 md:pt-10 md:pb-24">
                     {/* Decorative Gradient Background (Blue) */}
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/30 rounded-[50%] blur-[120px] pointer-events-none transform translate-x-1/3 -translate-y-1/3" />
                     <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-600/20 rounded-[50%] blur-[120px] pointer-events-none transform -translate-x-1/4 translate-y-1/4" />
@@ -73,7 +73,7 @@ export default function Home({ setPage }) {
                             </div>
 
                             {/* Floating Doctor Qualification Card */}
-                            <div className="absolute -bottom-8 -left-4 md:-bottom-10 md:left-[-4rem] bg-gradient-to-br from-amber-500 to-amber-600 text-white p-5 md:p-7 border-[6px] border-white rounded-[1.5rem] shadow-2xl flex items-center gap-5 z-20 transition-transform duration-300 hover:-translate-y-2">
+                            <div className="absolute -bottom-8 -left-4 md:-bottom-10 md:left-[-4rem] bg-gradient-to-br from-[#10b981] to-[#047857] text-white p-5 md:p-7 border-[6px] border-white rounded-[1.5rem] shadow-2xl flex items-center gap-5 z-20 transition-transform duration-300 hover:-translate-y-2">
                                 <div className="w-14 h-14 bg-white/20 backdrop-blur-sm border-2 border-white/50 rounded-full flex items-center justify-center flex-shrink-0 shadow-inner">
                                     <svg className="w-7 h-7 text-white drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -81,11 +81,11 @@ export default function Home({ setPage }) {
                                 </div>
                                 <div className="pr-2 flex flex-col">
                                     <div className="flex items-center gap-2 mb-1">
-                                        <span className="text-[11px] font-bold tracking-widest text-[#ffedd5] uppercase drop-shadow-sm">Chief Medical Officer</span>
-                                        <div className="w-1.5 h-1.5 rounded-full bg-amber-200"></div>
+                                        <span className="text-[11px] font-bold tracking-widest text-[#d1fae5] uppercase drop-shadow-sm">Chief Medical Officer</span>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#a7f3d0]"></div>
                                     </div>
                                     <p className="text-[24px] font-black leading-tight drop-shadow-md">Dr. Sanjay Gupta</p>
-                                    <p className="text-[13px] font-semibold text-amber-50 mt-1 drop-shadow-sm">15+ Years Exp. • AIIMS Alumnus</p>
+                                    <p className="text-[13px] font-semibold text-[#ecfdf5] mt-1 drop-shadow-sm">15+ Years Exp. • AIIMS Alumnus</p>
                                 </div>
                             </div>
                         </div>
