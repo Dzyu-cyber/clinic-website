@@ -28,13 +28,13 @@ export default function About() {
                         <h2 className="font-heading text-2xl font-semibold text-medical mb-6">Our Leadership</h2>
                         <div className="flex flex-col md:flex-row gap-6 items-start">
                             <div className="w-48 h-48 bg-gray-300 rounded-lg flex-shrink-0 flex items-center justify-center text-gray-500 text-sm overflow-hidden">
-                                <img src="/doctor-harvey.png" alt="Dr. Harvey Cushing" className="w-full h-full object-cover object-top" />
+                                <img src="/Hero_indiandoctor.jpg" alt="Dr. Sanjay Gupta" className="w-full h-full object-cover object-top" />
                             </div>
                             <div>
-                                <h3 className="font-heading text-xl font-bold text-gray-900">Dr. Harvey Cushing, MD</h3>
-                                <p className="text-sm text-gray-500 mb-3">BSc., MD (Internal Medicine) - Harvard Medical School</p>
+                                <h3 className="font-heading text-xl font-bold text-gray-900">Dr. Sanjay Gupta, MD</h3>
+                                <p className="text-sm text-gray-500 mb-3">MBBS, MD (Internal Medicine) - AIIMS New Delhi</p>
                                 <p className="text-gray-600 leading-relaxed">
-                                    With over 15 years of clinical experience, Dr. Cushing specializes in preventative care and chronic disease management. He leads our team of certified professionals to ensure the highest standard of patient care.
+                                    With over 15 years of clinical experience, Dr. Gupta specializes in preventative care and chronic disease management. He leads our team of certified professionals to ensure the highest standard of patient care.
                                 </p>
                             </div>
                         </div>

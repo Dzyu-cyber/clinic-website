@@ -35,7 +35,7 @@ export default function Home({ setPage }) {
                         <div className="flex-1 w-full">
                             <div className="relative w-full h-64 md:h-[500px] overflow-hidden rounded-2xl shadow-2xl">
                                 <img
-                                    src="/hero-doctor.jpg"
+                                    src="/Hero_indiandoctor.jpg"
                                     alt="CityCare Professional Medical Staff"
                                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                                 />
@@ -85,9 +85,9 @@ export default function Home({ setPage }) {
                         </div>
                         <div className="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
                             <div className="w-32 h-32 bg-gray-300 rounded-full mb-4 mx-auto overflow-hidden">
-                                <img src="/doctor-harvey.png" alt="Dr. Harvey Cushing" className="w-full h-full object-cover object-top" />
+                                <img src="/Hero_indiandoctor.jpg" alt="Dr. Sanjay Gupta" className="w-full h-full object-cover object-top" />
                             </div>
-                            <h3 className="font-heading text-xl font-bold text-center">Dr. Harvey Cushing</h3>
+                            <h3 className="font-heading text-xl font-bold text-center">Dr. Sanjay Gupta</h3>
                             <p className="text-medical font-medium text-center mb-4">Chief Medical Officer</p>
                             <p className="text-gray-600 text-sm text-center">"Our mission is to provide world-class healthcare with a personal touch. We treat patients, not just symptoms."</p>
                         </div>

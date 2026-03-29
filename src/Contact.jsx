@@ -14,13 +14,13 @@ export default function Contact() {
                             <h2 className="font-heading text-xl font-bold text-medical mb-6">Clinic Information</h2>
                             <div className="space-y-4 text-gray-600">
                                 <p className="flex items-center gap-3">
-                                    <span className="text-xl">📍</span> 123 Health Ave, Medical District, NY 10001
+                                    <span className="text-xl">📍</span> Apollo Hospital Rd, Jubilee Hills, Hyderabad, Telangana 500033
                                 </p>
                                 <p className="flex items-center gap-3">
-                                    <span className="text-xl">📞</span> (555) 123-4567
+                                    <span className="text-xl">📞</span> +91 95537 22793
                                 </p>
                                 <p className="flex items-center gap-3">
-                                    <span className="text-xl">✉️</span> citycare@gmail.com
+                                    <span className="text-xl">✉️</span> care@cityhospital.in
                                 </p>
                             </div>
                         </div>
@@ -36,7 +36,7 @@ export default function Contact() {
 
                         <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 border border-gray-300 overflow-hidden">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29374.887258384915!2d-74.0152425!3d40.758364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2585438885b51%3A0x63dae2862dff8b91!2sCityMD%20West%2057th%20Urgent%20Care%20-%20NYC!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                                src="https://maps.google.com/maps?q=Apollo%20Hospitals%20Jubilee%20Hills%20Hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}
@@ -59,7 +59,7 @@ export default function Contact() {
 
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="phone">Phone Number</label>
-                                <input type="tel" id="phone" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-medical focus:border-transparent" placeholder="(555) 000-0000" required />
+                                <input type="tel" id="phone" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-medical focus:border-transparent" placeholder="+91 00000 00000" required />
                             </div>
 
                             <div>
