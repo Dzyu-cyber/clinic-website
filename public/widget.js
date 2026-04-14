@@ -198,7 +198,7 @@
 
   const appendMessage = (text, sender) => {
       const msg = document.createElement('div');
-      msg.className = \`noesis-msg \${sender === 'user' ? 'noesis-user' : 'noesis-bot'}\`;
+      msg.className = 'noesis-msg ' + (sender === 'user' ? 'noesis-user' : 'noesis-bot');
       msg.innerText = text;
       messagesArea.appendChild(msg);
       messagesArea.scrollTop = messagesArea.scrollHeight;
@@ -229,14 +229,14 @@
       showLoading();
 
       try {
-          const res = await fetch(\`\${apiUrl}/api/chat\`, {
+          const res = await fetch(apiUrl + '/api/chat', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ organizationId: orgId, query: text })
           });
           const data = await res.json();
           hideLoading();
-          
+
           if (res.ok) {
               appendMessage(data.answer, 'bot');
           } else {
