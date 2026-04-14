@@ -1,7 +1,10 @@
 (function() {
-  const scriptTag = document.currentScript;
-  const orgId = scriptTag.getAttribute('data-org-id') || 'DEV_ORG_123';
-  const apiUrl = scriptTag.getAttribute('data-api-url') || 'http://localhost:3000';
+  // document.currentScript is null when a type=module script exists on the page.
+  // Use querySelector to find this script tag by its src as a reliable fallback.
+  const scriptTag = document.currentScript ||
+    document.querySelector('script[src*="widget.js"]');
+  const orgId = (scriptTag && scriptTag.getAttribute('data-org-id')) || 'DEV_ORG_123';
+  const apiUrl = (scriptTag && scriptTag.getAttribute('data-api-url')) || 'http://localhost:3000';
 
   // 1. Inject Styles
   const styles = `
