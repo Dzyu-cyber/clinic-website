@@ -14,7 +14,7 @@ export default async function handler(req, res) {
             return res.status(500).json({ error: 'API key not configured securely on server' });
         }
 
-        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiApiKey}`;
+        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${geminiApiKey}`;
 
         const promptText = `You are a helpful customer support agent for CityCare Clinic. 
 Here is the website information:
