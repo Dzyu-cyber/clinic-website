@@ -327,7 +327,8 @@
           if (res.ok && data.answer) {
               appendMessage(data.answer, 'bot');
           } else {
-              appendMessage("Sorry, I'm having trouble connecting right now.", 'bot');
+              const errorMsg = data.details || data.error || data.message || "Sorry, I'm having trouble connecting right now.";
+              appendMessage("Error: " + errorMsg, 'bot');
           }
       } catch (err) {
           hideLoading();

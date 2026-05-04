@@ -40,10 +40,14 @@ User Question: ${query}`;
             // Send the successful answer back to the frontend
             return res.status(200).json({ answer: data.candidates[0].content.parts[0].text });
         } else {
-            return res.status(500).json({ error: 'Failed to generate response from Gemini' });
+            console.error("Gemini Error:", data);
+            return res.status(500).json({ 
+                error: 'Failed to generate response from Gemini', 
+                details: data.error ? data.error.message : 'Unknown Gemini Error' 
+            });
         }
     } catch (error) {
         console.error("Chat API Error:", error);
-        return res.status(500).json({ error: 'Internal server error' });
+        return res.status(500).json({ error: 'Internal server error', message: error.message });
     }
 }
