@@ -50,9 +50,9 @@ export default function Home({ setPage }) {
                             </div>
 
                             {/* Main Heading */}
-                            <h1 className="font-heading text-3xl sm:text-4xl md:text-[4.5rem] leading-[1.4] font-black text-[#111827] tracking-tighter">
+                            <h1 className="font-heading text-[2.4rem] sm:text-[2.85rem] md:text-[4.5rem] leading-[1.3] md:leading-[1.4] font-black text-[#111827] tracking-tighter">
                                 <span className="drop-shadow-sm">Professional</span> <br />
-                                <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#4F46E5] drop-shadow-sm whitespace-nowrap">Medical services</span> <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#4F46E5] drop-shadow-sm whitespace-nowrap">Medical services</span> <br />
                                 <span className="drop-shadow-sm">You can trust</span>
                             </h1>
 
