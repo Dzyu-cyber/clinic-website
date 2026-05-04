@@ -314,15 +314,17 @@
       showLoading();
 
       try {
-          const res = await fetch(apiUrl + '/api/chat', {
+          // Send the query to our secure Vercel serverless function
+          const res = await fetch('/api/chat', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ organizationId: orgId, query: text })
+              body: JSON.stringify({ query: text })
           });
+          
           const data = await res.json();
           hideLoading();
 
-          if (res.ok) {
+          if (res.ok && data.answer) {
               appendMessage(data.answer, 'bot');
           } else {
               appendMessage("Sorry, I'm having trouble connecting right now.", 'bot');
