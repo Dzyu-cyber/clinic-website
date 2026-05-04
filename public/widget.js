@@ -57,6 +57,13 @@
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           border: 1px solid #e5e7eb;
       }
+      @media (max-width: 480px) {
+          #noesis-chat-window {
+              width: calc(100vw - 32px);
+              height: 500px;
+              max-height: 70vh;
+          }
+      }
       #noesis-chat-window.noesis-open {
           opacity: 1;
           pointer-events: all;
