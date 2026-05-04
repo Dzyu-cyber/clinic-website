@@ -10,23 +10,30 @@
   const styles = `
       #noesis-widget-container {
           position: fixed;
-          bottom: 24px;
-          right: 24px;
+          bottom: 12px;
+          right: 16px;
           z-index: 999999;
           font-family: system-ui, -apple-system, sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 12px;
+          pointer-events: none;
       }
+      #noesis-widget-container > * { pointer-events: auto; }
       #noesis-bubble {
           width: 60px;
           height: 60px;
-          background: #4f46e5;
+          background: #2563eb;
           border-radius: 50%;
-          box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
           transition: transform 0.2s;
           color: white;
+          position: relative;
       }
       #noesis-bubble:hover {
           transform: scale(1.05);
@@ -40,7 +47,7 @@
           max-height: 80vh;
           background: white;
           border-radius: 20px;
-          box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+          box-shadow: 0 25px 30px -5px rgba(0,0,0,0.2), 0 15px 15px -5px rgba(0,0,0,0.1);
           display: flex;
           flex-direction: column;
           overflow: hidden;
@@ -56,7 +63,7 @@
           transform: translateY(0);
       }
       #noesis-header {
-          background: #4f46e5;
+          background: #2563eb;
           color: white;
           padding: 20px;
           font-weight: 600;
@@ -96,7 +103,7 @@
           border: 1px solid #e2e8f0;
       }
       .noesis-user {
-          background: #4f46e5;
+          background: #2563eb;
           color: white;
           align-self: flex-end;
           border-bottom-right-radius: 2px;
@@ -117,10 +124,10 @@
           font-size: 0.95rem;
       }
       #noesis-input:focus {
-          border-color: #4f46e5;
+          border-color: #2563eb;
       }
       #noesis-send {
-          background: #4f46e5;
+          background: #2563eb;
           color: white;
           border: none;
           border-radius: 8px;
@@ -150,6 +157,64 @@
           0%, 80%, 100% { transform: scale(0); }
           40% { transform: scale(1); }
       }
+            #noesis-callout {
+          background: white;
+          color: #1e293b;
+          padding: 8px 16px;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          font-size: 0.85rem;
+          font-weight: 500;
+          white-space: nowrap;
+          border: 1px solid #e2e8f0;
+          pointer-events: none;
+          transition: opacity 0.3s;
+          opacity: 1;
+          position: relative;
+      }
+      #noesis-callout::after {
+          content: '';
+          position: absolute;
+          right: -6px;
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+          width: 10px;
+          height: 10px;
+          background: white;
+          border-right: 1px solid #e2e8f0;
+          border-top: 1px solid #e2e8f0;
+      }
+      .noesis-hide {
+          opacity: 0 !important;
+          display: none !important;
+      }
+      #noesis-dismiss {
+          position: absolute;
+          top: -6px;
+          right: -6px;
+          width: 22px;
+          height: 22px;
+          background: white;
+          color: #64748b;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 10;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+          border: 1px solid #e2e8f0;
+          transition: all 0.2s;
+      }
+      #noesis-dismiss:hover {
+          color: #ef4444;
+          border-color: #fecaca;
+          transform: scale(1.1);
+      }
+      #noesis-dismiss svg {
+          width: 12px;
+          height: 12px;
+      }
   `;
   const styleEl = document.createElement('style');
   styleEl.innerHTML = styles;
@@ -172,7 +237,14 @@
               <button type="submit" id="noesis-send">Send</button>
           </form>
       </div>
+      <div id="noesis-callout">Chat with me!</div>
       <div id="noesis-bubble">
+          <div id="noesis-dismiss">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+          </div>
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
           </svg>
@@ -191,7 +263,13 @@
 
   const toggleWindow = () => {
       chatWindow.classList.toggle('noesis-open');
+      document.getElementById('noesis-callout').classList.toggle('noesis-hide');
   };
+
+  document.getElementById('noesis-dismiss').addEventListener('click', (e) => {
+      e.stopPropagation();
+      container.classList.add('noesis-hide');
+  });
 
   bubble.addEventListener('click', toggleWindow);
   closeBtn.addEventListener('click', toggleWindow);

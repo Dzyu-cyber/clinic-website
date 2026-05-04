@@ -51,20 +51,40 @@ export default function Contact() {
                     {/* Contact Form */}
                     <div className="bg-white border border-gray-200 p-8 rounded-lg shadow-sm h-fit">
                         <h2 className="font-heading text-2xl font-bold text-gray-900 mb-6">Book an Appointment</h2>
-                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        <form 
+                            className="space-y-6" 
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                const formData = new FormData(e.target);
+                                const name = formData.get('name');
+                                const phone = formData.get('phone');
+                                const service = formData.get('service');
+                                const notes = formData.get('message');
+                                
+                                const message = encodeURIComponent(
+                                    `*New Appointment Request*\n\n` +
+                                    `*Full Name:* ${name}\n` +
+                                    `*Phone:* ${phone}\n` +
+                                    `*Service:* ${service}\n` +
+                                    `*Notes:* ${notes || 'None'}`
+                                );
+                                
+                                window.open(`https://api.whatsapp.com/send?phone=919553722793&text=${message}`, '_blank');
+                            }}
+                        >
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="name">Full Name</label>
-                                <input type="text" id="name" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-medical focus:border-transparent" placeholder="John Doe" required />
+                                <input name="name" type="text" id="name" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-medical focus:border-transparent" placeholder="John Doe" required />
                             </div>
 
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="phone">Phone Number</label>
-                                <input type="tel" id="phone" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-medical focus:border-transparent" placeholder="+91 00000 00000" required />
+                                <input name="phone" type="tel" id="phone" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-medical focus:border-transparent" placeholder="+91 00000 00000" required />
                             </div>
 
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="service">Service Required</label>
-                                <select id="service" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-medical focus:border-transparent bg-white">
+                                <select name="service" id="service" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-medical focus:border-transparent bg-white">
                                     <option>General Checkup</option>
                                     <option>Diabetes Care</option>
                                     <option>Child Vaccination</option>
@@ -74,11 +94,11 @@ export default function Contact() {
 
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="message">Additional Notes</label>
-                                <textarea id="message" rows="4" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-medical focus:border-transparent" placeholder="Briefly describe your symptoms or inquiry..."></textarea>
+                                <textarea name="message" id="message" rows="4" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-medical focus:border-transparent" placeholder="Briefly describe your symptoms or inquiry..."></textarea>
                             </div>
 
                             <Button type="submit" className="w-full">Submit Request</Button>
-                            <p className="text-xs text-gray-500 text-center mt-4">We will call you within 1 business hour to confirm your appointment time.</p>
+                            <p className="text-xs text-gray-500 text-center mt-4">This will open WhatsApp to send your request directly to our team.</p>
                         </form>
                     </div>
                 </div>
